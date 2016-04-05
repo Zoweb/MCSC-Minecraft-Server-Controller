@@ -1,0 +1,3 @@
+"D:\Users\zachy\Documents\Visual Studio 2015\Projects\MinecraftServer\fontInstaller\bin\Debug\fontInstaller.exe" --delete minecraft.ttf
+"D:\Users\zachy\Documents\Visual Studio 2015\Projects\MinecraftServer\fontInstaller\bin\Debug\fontInstaller.exe" FILEFOLDER:D:\Users\zachy\Documents\Visual Studio 2015\Projects\MinecraftServer\MinecraftServer\bin\Debug\minecraft.ttf:END[FILEFOLDER] FILENAME:minecraft.ttf:END[FILENAME] DESCRIPTION:Minecraftia Regular:END[DESCRIPTION]
+pause

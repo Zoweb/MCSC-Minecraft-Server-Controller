@@ -1,0 +1,6 @@
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\fontInstaller\bin\Debug\fontInstaller.exe.config
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\fontInstaller\bin\Debug\fontInstaller.exe
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\fontInstaller\bin\Debug\fontInstaller.pdb
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\fontInstaller\obj\Debug\fontInstaller.csprojResolveAssemblyReference.cache
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\fontInstaller\obj\Debug\fontInstaller.exe
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\fontInstaller\obj\Debug\fontInstaller.pdb
