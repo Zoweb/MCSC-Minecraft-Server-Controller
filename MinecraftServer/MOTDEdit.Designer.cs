@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MOTDEdit));
             this.label1 = new System.Windows.Forms.Label();
-            this.motdOutput = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -45,30 +43,12 @@
     "n a future version if requested.\r\nJust copy the output to the textbox below.";
             this.label1.Visible = false;
             // 
-            // motdOutput
-            // 
-            this.motdOutput.Location = new System.Drawing.Point(15, 491);
-            this.motdOutput.Name = "motdOutput";
-            this.motdOutput.Size = new System.Drawing.Size(779, 20);
-            this.motdOutput.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 472);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Enter in the generated MOTD";
-            // 
             // MOTDEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(806, 523);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.motdOutput);
+            this.ClientSize = new System.Drawing.Size(892, 678);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -77,6 +57,8 @@
             this.Name = "MOTDEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit MOTD";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MOTDEdit_Close);
+            this.Load += new System.EventHandler(this.MOTDEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,7 +66,5 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox motdOutput;
-        private System.Windows.Forms.Label label2;
     }
 }

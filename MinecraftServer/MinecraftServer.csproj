@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetBrowser, Version=1.6.2.0, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\DotNetBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.Chromium">
+      <HintPath>libs\DotNetBrowser.Chromium.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -73,6 +80,7 @@
     <Compile Include="addserver.Designer.cs">
       <DependentUpon>addserver.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomDialogHandler.cs" />
     <Compile Include="download.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +93,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="globals.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="MOTDEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MOTDEdit.Designer.cs">
       <DependentUpon>MOTDEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="msgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="msgBox.Designer.cs">
+      <DependentUpon>msgBox.cs</DependentUpon>
     </Compile>
     <Compile Include="newServer.cs">
       <SubType>Form</SubType>
@@ -112,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MOTDEdit.resx">
       <DependentUpon>MOTDEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="msgBox.resx">
+      <DependentUpon>msgBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newServer.resx">
       <DependentUpon>newServer.cs</DependentUpon>
@@ -142,12 +159,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libs\DotNetBrowser.dll" />
     <Content Include="libs\Microsoft.WindowsAPICodePack.dll" />
     <Content Include="libs\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll" />
     <Content Include="libs\Microsoft.WindowsAPICodePack.Sensors.dll" />
     <Content Include="libs\Microsoft.WindowsAPICodePack.Shell.dll" />
     <Content Include="libs\Microsoft.WindowsAPICodePack.ShellExtensions.dll" />
+    <Content Include="libs\mozctlx.dll" />
     <Content Include="other\donesfx.mp3" />
+    <EmbeddedResource Include="teamdev.licenses" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

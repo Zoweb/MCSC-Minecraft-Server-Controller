@@ -35,21 +35,23 @@
             this.updateBungee = new System.Windows.Forms.Button();
             this.addServer = new System.Windows.Forms.Button();
             this.bungeeGroup = new System.Windows.Forms.GroupBox();
+            this.bungeeRunCMD = new System.Windows.Forms.Button();
+            this.command = new System.Windows.Forms.TextBox();
             this.optionsBox = new System.Windows.Forms.GroupBox();
+            this.options = new System.Windows.Forms.Panel();
+            this.MOTDEditor = new System.Windows.Forms.Button();
+            this.bungeeRAM = new System.Windows.Forms.NumericUpDown();
+            this.bungeePort = new System.Windows.Forms.NumericUpDown();
+            this.serverPort = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.bungeeOutput = new System.Windows.Forms.TextBox();
             this.startStopBungee = new System.Windows.Forms.Button();
-            this.options = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.serverPort = new System.Windows.Forms.Label();
-            this.bungeePort = new System.Windows.Forms.NumericUpDown();
-            this.bungeeRAM = new System.Windows.Forms.NumericUpDown();
-            this.MOTDEditor = new System.Windows.Forms.Button();
             this.currentServers.SuspendLayout();
             this.bungeeGroup.SuspendLayout();
             this.optionsBox.SuspendLayout();
             this.options.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bungeePort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bungeeRAM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bungeePort)).BeginInit();
             this.SuspendLayout();
             // 
             // currentServers
@@ -104,6 +106,8 @@
             // 
             // bungeeGroup
             // 
+            this.bungeeGroup.Controls.Add(this.bungeeRunCMD);
+            this.bungeeGroup.Controls.Add(this.command);
             this.bungeeGroup.Controls.Add(this.optionsBox);
             this.bungeeGroup.Controls.Add(this.bungeeOutput);
             this.bungeeGroup.Controls.Add(this.startStopBungee);
@@ -113,6 +117,23 @@
             this.bungeeGroup.TabIndex = 1;
             this.bungeeGroup.TabStop = false;
             this.bungeeGroup.Text = "Bungee";
+            // 
+            // bungeeRunCMD
+            // 
+            this.bungeeRunCMD.Location = new System.Drawing.Point(412, 387);
+            this.bungeeRunCMD.Name = "bungeeRunCMD";
+            this.bungeeRunCMD.Size = new System.Drawing.Size(137, 20);
+            this.bungeeRunCMD.TabIndex = 4;
+            this.bungeeRunCMD.Text = "Send";
+            this.bungeeRunCMD.UseVisualStyleBackColor = true;
+            this.bungeeRunCMD.Click += new System.EventHandler(this.bungeeRunCMD_Click);
+            // 
+            // command
+            // 
+            this.command.Location = new System.Drawing.Point(6, 387);
+            this.command.Name = "command";
+            this.command.Size = new System.Drawing.Size(400, 20);
+            this.command.TabIndex = 3;
             // 
             // optionsBox
             // 
@@ -124,29 +145,6 @@
             this.optionsBox.TabIndex = 2;
             this.optionsBox.TabStop = false;
             this.optionsBox.Text = "Options";
-            // 
-            // bungeeOutput
-            // 
-            this.bungeeOutput.BackColor = System.Drawing.Color.White;
-            this.bungeeOutput.Font = new System.Drawing.Font("Consolas", 8.25F);
-            this.bungeeOutput.Location = new System.Drawing.Point(7, 82);
-            this.bungeeOutput.Multiline = true;
-            this.bungeeOutput.Name = "bungeeOutput";
-            this.bungeeOutput.ReadOnly = true;
-            this.bungeeOutput.Size = new System.Drawing.Size(542, 299);
-            this.bungeeOutput.TabIndex = 1;
-            // 
-            // startStopBungee
-            // 
-            this.startStopBungee.Enabled = false;
-            this.startStopBungee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startStopBungee.Location = new System.Drawing.Point(7, 20);
-            this.startStopBungee.Name = "startStopBungee";
-            this.startStopBungee.Size = new System.Drawing.Size(542, 55);
-            this.startStopBungee.TabIndex = 0;
-            this.startStopBungee.Text = "Start";
-            this.startStopBungee.UseVisualStyleBackColor = true;
-            this.startStopBungee.Click += new System.EventHandler(this.startStopBungee_Click);
             // 
             // options
             // 
@@ -162,45 +160,15 @@
             this.options.TabIndex = 0;
             this.options.Paint += new System.Windows.Forms.PaintEventHandler(this.options_Paint);
             // 
-            // label2
+            // MOTDEditor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Server RAM (in Megabytes)";
-            // 
-            // serverPort
-            // 
-            this.serverPort.AutoSize = true;
-            this.serverPort.Location = new System.Drawing.Point(4, 44);
-            this.serverPort.Name = "serverPort";
-            this.serverPort.Size = new System.Drawing.Size(136, 13);
-            this.serverPort.TabIndex = 2;
-            this.serverPort.Text = "Server Port (Default 25577)";
-            // 
-            // bungeePort
-            // 
-            this.bungeePort.Location = new System.Drawing.Point(3, 60);
-            this.bungeePort.Maximum = new decimal(new int[] {
-            29999,
-            0,
-            0,
-            0});
-            this.bungeePort.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bungeePort.Name = "bungeePort";
-            this.bungeePort.Size = new System.Drawing.Size(177, 20);
-            this.bungeePort.TabIndex = 3;
-            this.bungeePort.Value = new decimal(new int[] {
-            25577,
-            0,
-            0,
-            0});
+            this.MOTDEditor.Location = new System.Drawing.Point(4, 335);
+            this.MOTDEditor.Name = "MOTDEditor";
+            this.MOTDEditor.Size = new System.Drawing.Size(176, 23);
+            this.MOTDEditor.TabIndex = 5;
+            this.MOTDEditor.Text = "Edit MODT";
+            this.MOTDEditor.UseVisualStyleBackColor = true;
+            this.MOTDEditor.Click += new System.EventHandler(this.MOTDEditor_Click);
             // 
             // bungeeRAM
             // 
@@ -224,15 +192,69 @@
             0,
             0});
             // 
-            // MOTDEditor
+            // bungeePort
             // 
-            this.MOTDEditor.Location = new System.Drawing.Point(4, 335);
-            this.MOTDEditor.Name = "MOTDEditor";
-            this.MOTDEditor.Size = new System.Drawing.Size(176, 23);
-            this.MOTDEditor.TabIndex = 5;
-            this.MOTDEditor.Text = "Edit MODT";
-            this.MOTDEditor.UseVisualStyleBackColor = true;
-            this.MOTDEditor.Click += new System.EventHandler(this.MOTDEditor_Click);
+            this.bungeePort.Location = new System.Drawing.Point(3, 60);
+            this.bungeePort.Maximum = new decimal(new int[] {
+            29999,
+            0,
+            0,
+            0});
+            this.bungeePort.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.bungeePort.Name = "bungeePort";
+            this.bungeePort.Size = new System.Drawing.Size(177, 20);
+            this.bungeePort.TabIndex = 3;
+            this.bungeePort.Value = new decimal(new int[] {
+            25577,
+            0,
+            0,
+            0});
+            // 
+            // serverPort
+            // 
+            this.serverPort.AutoSize = true;
+            this.serverPort.Location = new System.Drawing.Point(4, 44);
+            this.serverPort.Name = "serverPort";
+            this.serverPort.Size = new System.Drawing.Size(136, 13);
+            this.serverPort.TabIndex = 2;
+            this.serverPort.Text = "Server Port (Default 25577)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Server RAM (in Megabytes)";
+            // 
+            // bungeeOutput
+            // 
+            this.bungeeOutput.BackColor = System.Drawing.Color.White;
+            this.bungeeOutput.Font = new System.Drawing.Font("Consolas", 8.25F);
+            this.bungeeOutput.Location = new System.Drawing.Point(7, 82);
+            this.bungeeOutput.Multiline = true;
+            this.bungeeOutput.Name = "bungeeOutput";
+            this.bungeeOutput.ReadOnly = true;
+            this.bungeeOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.bungeeOutput.Size = new System.Drawing.Size(542, 299);
+            this.bungeeOutput.TabIndex = 1;
+            // 
+            // startStopBungee
+            // 
+            this.startStopBungee.Enabled = false;
+            this.startStopBungee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startStopBungee.Location = new System.Drawing.Point(7, 20);
+            this.startStopBungee.Name = "startStopBungee";
+            this.startStopBungee.Size = new System.Drawing.Size(542, 55);
+            this.startStopBungee.TabIndex = 0;
+            this.startStopBungee.Text = "Start";
+            this.startStopBungee.UseVisualStyleBackColor = true;
+            this.startStopBungee.Click += new System.EventHandler(this.startStopBungee_Click);
             // 
             // home
             // 
@@ -246,6 +268,7 @@
             this.MaximizeBox = false;
             this.Name = "home";
             this.Text = "Minecraft Server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.home_Close);
             this.Load += new System.EventHandler(this.home_Load);
             this.currentServers.ResumeLayout(false);
             this.currentServers.PerformLayout();
@@ -254,8 +277,8 @@
             this.optionsBox.ResumeLayout(false);
             this.options.ResumeLayout(false);
             this.options.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bungeePort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bungeeRAM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bungeePort)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,6 +300,8 @@
         private System.Windows.Forms.NumericUpDown bungeePort;
         private System.Windows.Forms.NumericUpDown bungeeRAM;
         private System.Windows.Forms.Button MOTDEditor;
+        private System.Windows.Forms.Button bungeeRunCMD;
+        private System.Windows.Forms.TextBox command;
     }
 }
 

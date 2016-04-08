@@ -60,7 +60,7 @@ namespace MinecraftServer
             double percentage = bytesIn / totalBytes * 100;
             DlBox.downloadAmount.Text = "Downloaded " + e.BytesReceived + "b of " + e.TotalBytesToReceive + "b";
             DlBox.downloadProgress.Value = int.Parse(Math.Truncate(percentage).ToString());
-            globals.newServerName = serverName.Text;
+            Globals.newServerName = serverName.Text;
         }
 
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -68,6 +68,12 @@ namespace MinecraftServer
             DlBox.downloadAmount.Text = "Completed";
             DlBox.Close();
             base.Close();
+        }
+
+        private void newServer_Close(object sender, FormClosingEventArgs e)
+        {
+            //e.Cancel = true;
+            //Globals.FadeOut(this, 10, true);
         }
     }
 }

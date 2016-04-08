@@ -17,3 +17,6 @@ D:\Users\zachy\Documents\Visual Studio 2015\Projects\MinecraftServer\MinecraftSe
 D:\Users\zachy\Documents\Visual Studio 2015\Projects\MinecraftServer\MinecraftServer\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
 D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\MinecraftServer\obj\Debug\MinecraftServer.MOTDEdit.resources
 D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\MinecraftServer\bin\Debug\other\minecraft.ttf
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\MinecraftServer\bin\Debug\DotNetBrowser.Chromium.dll
+D:\Users\zachy\documents\visual studio 2015\Projects\MinecraftServer\MinecraftServer\bin\Debug\DotNetBrowser.dll
+D:\Users\zachy\Documents\Visual Studio 2015\Projects\MinecraftServer\MinecraftServer\obj\Debug\MinecraftServer.msgBox.resources

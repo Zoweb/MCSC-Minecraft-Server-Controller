@@ -40,7 +40,8 @@ namespace MinecraftServer
 
         private void updateBungee_Click(object sender, EventArgs e)
         {
-            Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"MinecraftServer\Servers\Bungee"));
+            // http://dev.bukkit.org/media/files/892/229/sexymotd-1.3.1.jar
+            Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"MinecraftServer\Servers\Bungee\plugins\ServerListPlus"));
             WebClient Client = new WebClient();
             Client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
             Client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
@@ -70,9 +71,48 @@ namespace MinecraftServer
             prog.SetProgressValue(e.ProgressPercentage, 100);
         }
 
+        void client_DownloadFileCompletedPlugin1(object sender, AsyncCompletedEventArgs e)
+        {
+            startStopBungee.PerformClick();
+            var prog = TaskbarManager.Instance;
+            prog.SetProgressState(TaskbarProgressBarState.NoProgress);
+            DlBox.downloadAmount.Text = "Downloading config: ServerListPlus.yml";
+            WebClient Client = new WebClient();
+            Client.DownloadFileAsync(new Uri("http://zoweb.me/products/minecraftserver/defaultplugins/configfiles/slp"), Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"MinecraftServer\Servers\Bungee\plugins\ServerListPlus\ServerListPlus.yml"));
+            Thread sleep = new Thread(sleep10);
+            sleep.Start();
+        }
+
+        void sleep10()
+        {
+            Thread.Sleep(5000);
+            startStopBungee.Invoke(new MethodInvoker(delegate
+            {
+                bungee.StandardInput.WriteLine("/serverlistplus enable");
+                startStopBungee.PerformClick();
+            }));
+            //File.Move(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"MinecraftServer\Servers\Bungee\plugins\motd.jar"), Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"MinecraftServer\Servers\Bungee\plugins\motd.jar"));
+            //Directory.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"MinecraftServer\Servers\Bungee\plugins"));
+            Thread.Sleep(1000);
+            startStopBungee.Invoke(new MethodInvoker(delegate
+            {
+                //startStopBungee.PerformClick();
+            }));
+            Thread.Sleep(10000);
+            startStopBungee.Invoke(new MethodInvoker(delegate
+            {
+                //startStopBungee.PerformClick();
+            }));
+        }
+
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            DlBox.downloadAmount.Text = "Completed";
+            DlBox.downloadAmount.Text = "Installing default plugins... The server may run during this process.";
+            Thread.Sleep(1000);
+            WebClient Client = new WebClient();
+            Client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
+            Client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompletedPlugin1);
+            Client.DownloadFileAsync(new Uri("http://zoweb.me/products/minecraftserver/defaultplugins/slp"), Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"MinecraftServer\Servers\Bungee\plugins\slp.jar"));
             DlBox.Close();
             if(updateBungee.Text == "Download Bungee")
             {
@@ -248,6 +288,17 @@ namespace MinecraftServer
         private void options_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void bungeeRunCMD_Click(object sender, EventArgs e)
+        {
+            bungee.StandardInput.WriteLine(command.Text + "\n");
+        }
+
+        private void home_Close(object sender, FormClosingEventArgs e)
+        {
+            //e.Cancel = true;
+            //Globals.FadeOut(this, 10, true, true);
         }
     }
 }
